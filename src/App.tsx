@@ -11,33 +11,56 @@ function App() {
     const [numberCounter, setNumberCounter] = useState(minSetting)
     const [settings, setSettings] = useState(false)
 
-    const imgFirst = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkCHRejAXll_LMFcQhtalY53a_cYXdFdjxpA&usqp=CAU'
-    const imgGo = 'http://memesmix.net/media/created/dzlrpp.jpg'
-    const imgStop = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRShVKMNnRFIfCAWGbj9g4CCOXVnMSADdIHJA&usqp=CAU'
-    const imgSetting = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRogkzaNlXB0nrOhHCPYopU1kqZAGt2mKHGEw&usqp=CAU'
-    const imgStart = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVfeEuX1gmSm_VooMfY4RT6glepmVJs6xdQw&usqp=CAU'
-    const imgError = 'http://risovach.ru/upload/2015/02/mem/pacan-s-krestom_74091890_orig_.jpg'
-    const numbRed='https://media.tenor.com/images/2614199b4501901b307262eaef877b8b/tenor.png'
+    const OBJ = {
+        imgFirst: {
+            image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkCHRejAXll_LMFcQhtalY53a_cYXdFdjxpA&usqp=CAU',
+            styles: st.imgFirst
+        },
+        imgGo:{
+            image:'http://memesmix.net/media/created/dzlrpp.jpg',
+            styles:st.imgGo
+        },
+        imgStop:{
+            image:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRShVKMNnRFIfCAWGbj9g4CCOXVnMSADdIHJA&usqp=CAU',
+            styles:st.imgStop
+        },
+        imgSetting:{
+            image:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRogkzaNlXB0nrOhHCPYopU1kqZAGt2mKHGEw&usqp=CAU',
+            styles:st.imgSetting
+        },
+        imgStart:{
+            image:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVfeEuX1gmSm_VooMfY4RT6glepmVJs6xdQw&usqp=CAU',
+            styles:st.imgStart
+        },
+        imgError:{
+            image:'http://risovach.ru/upload/2015/02/mem/pacan-s-krestom_74091890_orig_.jpg',
+            styles:st.imgError
+        },
+        numbRed:{
+            image:'https://media.tenor.com/images/2614199b4501901b307262eaef877b8b/tenor.png',
+            styles:st.numbRed
+        }
+    }
 
-    const [stateForImg, setStateForImg] = useState(imgFirst)
-
+    const [stateForImg, setStateForImg] = useState('imgFirst')
+    console.log(stateForImg)
     const buttonGo = () => {
         if (numberCounter < maxSetting && settings === false) {
             setNumberCounter(numberCounter + 1)
-            setStateForImg(imgGo)
-        }else{setStateForImg(numbRed)}
+            setStateForImg('imgGo')
+        }else{setStateForImg('numbRed')}
     }
 
 
     const buttonStop = () => {
         if (settings === false) {
             setNumberCounter(minSetting)
-            setStateForImg(imgStop)
+            setStateForImg('imgStop')
         }
     }
     const buttonStart = () => {
         setSettings(false)
-        setStateForImg(imgStart)
+        setStateForImg('imgStart')
     }
 
     const customizationInputMin = (valueInput: number) => {
@@ -45,9 +68,9 @@ function App() {
             setMinSetting(valueInput)
             setNumberCounter(valueInput)
             setSettings(true)
-            setStateForImg(imgSetting)
+            setStateForImg('imgSetting')
         } else {
-            setStateForImg(imgError)
+            setStateForImg('imgError')
         }
     }
 
@@ -56,42 +79,18 @@ function App() {
             setMaxSetting(valueInput)
             setNumberCounter(minSetting)
             setSettings(true)
-            setStateForImg(imgSetting)
+            setStateForImg('imgSetting')
         } else {
-            setStateForImg(imgError)
+            setStateForImg('imgError')
         }
     }
-
-    let classNameIng
-    if (stateForImg == imgFirst) {
-        classNameIng = st.imgFirst
-    }
-    if (stateForImg == imgGo) {
-        classNameIng = st.imgGo
-    }
-    if (stateForImg == imgStop) {
-        classNameIng = st.imgStop
-    }
-    if (stateForImg == imgSetting) {
-        classNameIng = st.imgSetting
-    }
-    if (stateForImg == imgStart) {
-        classNameIng = st.imgStart
-    }
-    if (stateForImg == imgError) {
-        classNameIng = st.imgError
-    }
-    if (stateForImg == numbRed) {
-        classNameIng = st.numbRed
-    }
-
 
     return(
         <div>
             <div className={st.screenImg}>
                 <img
-                    className={classNameIng}
-                    src={stateForImg}/>
+                    className={OBJ[stateForImg as keyof typeof OBJ].styles}
+                    src={OBJ[stateForImg as keyof typeof OBJ].image}/>
             </div>
 
             <div className={st.screenSetting}>
