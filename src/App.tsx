@@ -17,6 +17,7 @@ function App() {
     const imgSetting = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRogkzaNlXB0nrOhHCPYopU1kqZAGt2mKHGEw&usqp=CAU'
     const imgStart = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVfeEuX1gmSm_VooMfY4RT6glepmVJs6xdQw&usqp=CAU'
     const imgError = 'http://risovach.ru/upload/2015/02/mem/pacan-s-krestom_74091890_orig_.jpg'
+    const numbRed='https://media.tenor.com/images/2614199b4501901b307262eaef877b8b/tenor.png'
 
     const [stateForImg, setStateForImg] = useState(imgFirst)
 
@@ -24,7 +25,7 @@ function App() {
         if (numberCounter < maxSetting && settings === false) {
             setNumberCounter(numberCounter + 1)
             setStateForImg(imgGo)
-        }
+        }else{setStateForImg(numbRed)}
     }
 
 
@@ -80,6 +81,9 @@ function App() {
     if (stateForImg == imgError) {
         classNameIng = st.imgError
     }
+    if (stateForImg == numbRed) {
+        classNameIng = st.numbRed
+    }
 
 
     return(
@@ -114,42 +118,6 @@ function App() {
 
         </div>
     )
-
-        /*(
-        <div>
-            <div className={st.screenImg}>
-                <img
-                    className={classNameIng}
-                    src={stateForImg}/>
-
-            </div>
-
-            <div className={st.screenImg}>
-            </div>
-
-            <div className={st.screenSetting}>
-                <Settings
-                    buttonStart={buttonStart}
-                    minSetting={minSetting}
-                    setMinSetting={customizationInputMin}
-                    maxSetting={maxSetting}
-                    setMaxSetting={customizationInputMax}
-                />
-            </div>
-            <div className={st.screenNumber}>
-                <Counter
-                    settings={settings}
-                    maxSetting={maxSetting}
-                    buttonStop={buttonStop}
-                    buttonGo={buttonGo}
-                    numberCounter={numberCounter}
-                />
-            </div>
-
-        </div>
-</div>
-)*/
-    ;
 }
 
 export default App;
