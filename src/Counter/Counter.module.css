@@ -1,0 +1,64 @@
+.number{
+    font-size: 110px;
+    font-weight: bold;
+    color: slategrey;
+    margin-left: 90px;
+}
+.numberRed{
+    font-size: 110px;
+    font-weight: bold;
+    color: red;
+    margin-left: 90px;
+}
+
+.butGo {
+    height: 85px;
+    width: 85px;
+    border: 3px solid slategrey;
+    background-color: slategrey;
+    border-radius: 40px;
+    margin-left: 45px;
+    margin-top: 30px;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+}
+.butGoDisabled{
+    opacity: 0.6;
+    height: 85px;
+    width:85px ;
+    border:3px solid slategrey;
+    background-color: slategrey;
+    border-radius: 40px;
+    margin-left: 45px;
+    margin-top: 30px;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+}
+.butStop{
+    height:85px;
+    width:85px ;
+    border:3px solid slategrey ;
+    background-color: slategrey;
+    border-radius: 40px;
+    margin-left: 30px;
+    margin-top: 30px;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+}
+
+.butStopDisabled{
+    opacity: 0.6;
+    height:85px;
+    width:85px ;
+    border:3px solid slategrey ;
+    background-color: slategrey;
+    border-radius: 40px;
+    margin-left: 30px;
+    margin-top: 30px;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+}

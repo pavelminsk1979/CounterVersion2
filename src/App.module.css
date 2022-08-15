@@ -1,0 +1,66 @@
+.screenImg{
+    height: 300px;
+    width:300px ;
+    border:6px solid slategrey ;
+    border-radius: 150px;
+    margin-left: 300px;
+    margin-top: 30px
+;
+}
+.screenSetting{
+    height: 300px;
+    width:300px ;
+    border:6px solid slategrey ;
+    border-radius: 150px;
+    float: left;
+    margin-left: 120px;
+
+}
+
+.screenNumber{
+    height: 300px;
+    width:300px ;
+    border:6px solid slategrey ;
+    border-radius: 150px;
+    float: left;
+    margin-left: 80px;
+}
+.imgFirst{
+    border-radius: 100px;
+    margin-top: 65px;
+    width:287px
+}
+.imgGo{
+    margin-left: 15px;
+    border-radius: 100px;
+    margin-top: 25px;
+    width:260px
+}
+.imgStop{
+    margin-left: 5px;
+    border-radius: 100px;
+    margin-top: 40px;
+    width:280px
+}
+.imgSetting{
+    margin-left: 5px;
+    border-radius: 100px;
+    margin-top: 40px;
+    width:280px
+}
+.imgStart{
+    margin-left: 15px;
+    border-radius: 100px;
+    margin-top: 20px;
+    width:260px
+}
+.imgError{
+    margin-left: 30px;
+    border-radius: 100px;
+    margin-top: 10px;
+    width:230px;
+    height: 260px;
+}
+
+
+
